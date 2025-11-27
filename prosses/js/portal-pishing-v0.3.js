@@ -1,5 +1,6 @@
 // <script type="text/javascript">
 // javascript versi v0.3
+
 // Saat halaman dimuat, arahkan kursor langsung ke kolom username
 document.login.username.focus();
 
