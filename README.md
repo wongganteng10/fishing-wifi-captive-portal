@@ -27,13 +27,13 @@ Instal paket-paket berikut sebelum menjalankan skrip:
 
 ```bash
 sudo apt update
-sudo apt install hostapd dnsmasq lighttpd isc-dhcp-server
+sudo apt install -y hostapd dnsmasq lighttpd isc-dhcp-server dos2unix
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng dos2unix
 
 # Untuk monitoring jaringan
-sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
+sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent dos2unix
 ```
 
 Atau download 
