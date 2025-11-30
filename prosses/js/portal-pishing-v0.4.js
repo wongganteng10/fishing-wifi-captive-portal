@@ -57,7 +57,7 @@ loginForm.addEventListener("submit", function (e) {
             form.reset();
             form.style.display = "block";
             document.getElementById("loading").style.display = "none"; // Tampilkan Kembali id loading pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
-            // document.getElementById("title").style.display = "block"; // Tampilkan Kembali title pada blok   <h2 id="title">Sign In</h2>
+            // document.getElementById("title").style.display = "block"; // Tampilkan Kembali id title pada blok   <h2 id="title">Sign In</h2>
 
             document.login.username.focus();
 
