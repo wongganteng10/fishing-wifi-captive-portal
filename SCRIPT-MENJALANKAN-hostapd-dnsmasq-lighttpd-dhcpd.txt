@@ -10,7 +10,7 @@
 sudo apt update
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng dos2unix
 
 # Untuk monitoring jaringan
 sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
@@ -91,3 +91,4 @@ sudo iptables -t nat -X
 sudo ifconfig wlan0 down
 sudo sysctl -w net.ipv4.ip_forward=0
 sudo systemctl restart NetworkManager
+
